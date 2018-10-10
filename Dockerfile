@@ -29,5 +29,6 @@ RUN sdkmanager "tools"
 RUN curl -o gradle-2.14-bin.zip https://downloads.gradle.org/distributions/gradle-2.14-bin.zip
 RUN unzip gradle-2.14-bin.zip -d gradle
 RUN mv gradle/gradle-2.14 gradle/2.14
+RUN mkdir -p ~/.gradle && echo "org.gradle.daemon=false" >> ~/.gradle/gradle.properties
 
 WORKDIR /root
